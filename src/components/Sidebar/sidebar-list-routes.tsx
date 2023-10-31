@@ -10,7 +10,9 @@ interface SidebarListRoutesProps {
 
 export const SidebarListRoutes = memo(
 	({ route, pathname }: SidebarListRoutesProps) => {
-		const currentPath = route.href.split('/')[1].includes(pathname)
+		const currentPath = route.href
+			.split('/')[1]
+			.includes(pathname.split('/')[1])
 
 		return (
 			<span className="flex w-full">
