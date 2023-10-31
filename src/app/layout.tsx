@@ -1,3 +1,6 @@
+import { cn } from '@/lib/utils'
+
+import { Sidebar } from '@/components/Sidebar'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ReactNode } from 'react'
@@ -13,7 +16,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
 		<html lang="pt-BR">
-			<body className={inter.className}>{children}</body>
+			<body className={cn('antialiased', inter.className)}>
+				<Sidebar />
+				<main className="h-full pl-40 md:pl-48">{children}</main>
+			</body>
 		</html>
 	)
 }
